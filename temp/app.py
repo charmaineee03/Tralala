@@ -33,11 +33,11 @@ url="https://api.github.com/repos/charmaineee03/temp/contents/data.csv"
 headers = {"Authorization": f"token {st.secrets['github']['token']}"}
 
 
-payload = (
+payload = {
   "message" : "Add data.csv",
   "content" : content, 
   "branch" : "main"
-)
+}
 
 r = requests.put(url, headers=headers, json=payload)
 if r.status_code in [200,201]:
