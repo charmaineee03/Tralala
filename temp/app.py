@@ -30,7 +30,8 @@ if st.button("Upload to GitHub"):
 
 
 url="https://api.github.com/repos/charmaineee03/temp/contents/data.csv"
-headers = ("Authorisation" :f"token {st.secrets['github']['token']}")
+headers = {"Authorization": f"token {st.secrets['github']['token']}"}
+
 
 payload = (
   "message" : "Add data.csv",
