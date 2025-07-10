@@ -39,7 +39,7 @@ if st.button("Upload to GitHub"):
     "branch" : "main"
   }
 
-r = requests.put(url, headers=headers, json=payload)
+  r = requests.put(url, headers=headers, json=payload)
 if r.status_code in [200,201]:
   st.success("data uploaded")
 else:
