@@ -29,15 +29,15 @@ if st.button("Upload to GitHub"):
   content = base64.b64encode(csv.encode()).decode()
 
 
-url="https://api.github.com/repos/charmaineee03/temp/contents/data.csv"
-headers = {"Authorization": f"token {st.secrets['github']['token']}"}
+  url="https://api.github.com/repos/charmaineee03/temp/contents/data.csv"
+  headers = {"Authorization": f"token {st.secrets['github']['token']}"}
 
 
-payload = {
-  "message" : "Add data.csv",
-  "content" : content, 
-  "branch" : "main"
-}
+  payload = {
+    "message" : "Add data.csv",
+    "content" : content, 
+    "branch" : "main"
+  }
 
 r = requests.put(url, headers=headers, json=payload)
 if r.status_code in [200,201]:
