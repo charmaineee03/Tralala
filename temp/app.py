@@ -36,8 +36,7 @@ headers = {"Authorization": f"token {st.secrets['github']['token']}"}
 payload = (
   "message" : "Add data.csv",
   "content" : content, 
-  "branch" : "main" 
-
+  "branch" : "main"
 )
 
 r = requests.put(url, headers=headers, json=payload)
